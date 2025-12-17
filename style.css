@@ -39,3 +39,29 @@ h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
   .nav-list{flex-wrap:wrap;gap:1rem;margin-top:.5rem;}
   .hero h2{font-size:1.75rem;}
 }
+
+Copy
+/* ---- about page full-screen background ---- */
+.about-bg {
+  background: url("gates-field-powerline.jpeg") no-repeat center center/cover;
+  min-height: 100vh;               /* fill viewport */
+  margin: 0;
+  color: #fff;                     /* white text for readability */
+  position: relative;
+}
+
+/* dark overlay so text pops */
+.about-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: -1;
+}
+
+/* keep header & content above overlay */
+.about-bg .header,
+.about-bg main {
+  position: relative;
+  z-index: 1;
+}
