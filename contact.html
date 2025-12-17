@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Zotz Welding LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container head-flex">
+      <h1 class="logo"><a href="index.html">ZOTZ WELDING</a></h1>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <h2>Get In Touch</h2>
+    <p>Call or text any time. Most jobs scheduled within 48 hours.</p>
+    <p><strong>Parker Zotz</strong><br>
+    Phone: <a href="tel:9407333111">940-733-3111</a><br>
+    Email: <a href="mailto:zotzwelding@gmail.com">zotzwelding@gmail.com</a></p>
+
+    <form action="https://formspree.io/f/xkndpqzk" method="POST" class="contact-form">
+      <label>Name <input type="text" name="name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Phone <input type="tel" name="phone"></label>
+      <label>Message<textarea name="message" rows="4" required></textarea></label>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="yr"></span> Zotz Welding LLC</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

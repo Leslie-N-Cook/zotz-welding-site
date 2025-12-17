@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – Zotz Welding LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container head-flex">
+      <h1 class="logo"><a href="index.html">ZOTZ WELDING</a></h1>
+      <nav aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <h2>About Parker Zotz</h2>
+    <p>I’m a certified welder with over 10 years of experience in MIG, TIG, and stick processes. I started Zotz Welding LLC to give homeowners, farmers, and light-commercial clients fast, affordable, on-site welding without shop minimums or long wait times. When you call, you talk directly to me—the guy holding the torch.</p>
+    <p>Strong, clean welds and a reputation for showing up on time, every time.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="yr"></span> Zotz Welding LLC</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
