@@ -43,7 +43,7 @@ h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
 Copy
 /* ---- about page full-screen background ---- */
 .about-bg {
-  background: url("gates-field-powerline.jpeg") no-repeat center center/cover;
+  background: url("gates-field-powerline.jpg") no-repeat center center/cover;
   min-height: 100vh;               /* fill viewport */
   margin: 0;
   color: #fff;                     /* white text for readability */
