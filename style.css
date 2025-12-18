@@ -66,7 +66,10 @@ Copy
   z-index: 1;
 }
  .logo img {
-  height: 25px;          /* adjust to taste */
+  height: 15px;          /* adjust to taste */
   width: auto;           /* keep aspect ratio */
   display: block;
+}
+.head-flex {
+  align-items: center;   /* already in your file, just make sure it stays */
 }
