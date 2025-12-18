@@ -104,7 +104,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
 }
 
-/* ----------  TINY FOOTER  ---------- */
+/* ----------  TINY FOOTER  ---------- 
 .footer {
   height: 60px;
   display: flex;
@@ -113,4 +113,4 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   background: var(--light);
   font-size: 0.875rem;
   color: var(--gunmetal);
-}
+}*/
