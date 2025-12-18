@@ -40,7 +40,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .nav-list a {
   font-weight: 800;
   font-size: 2.0rem;               /* BIGGER nav text */
-  color: var(--blue);
+  color: var(--gunmetal);
   transition: color 0.2s;
 }
 .nav-list a:hover { color: var(--blue); }
