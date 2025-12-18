@@ -98,3 +98,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   .nav-list { flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
   .hero h2 { font-size: 1.75rem; }
 }
+/* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
+.about-bg {
+  background: url("gates-field-powerline.jpg") no-repeat center 11% / cover;
+}
