@@ -100,6 +100,20 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg .header,
 .sercives-bg main { position: relative; z-index: 1; }
 
+
+/* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
+.about-bg {
+  background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
+  min-height: 100vh;
+  margin-bottom: auto;
+}
+/* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
+.services-bg {
+  background: url("cutomHayBailer.jpg") no-repeat center 1% / cover;
+  min-height: 100vh;
+  margin-bottom: auto;
+}
+
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
 .contact-container {
   background: url("img/contact-image.jpg") no-repeat center center/cover;
@@ -108,6 +122,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Full height of the viewport */
+  position: relative; /* Ensure the container is positioned */
 }
 
 .contact-form {
@@ -117,6 +132,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px; /* Adjust the max-width as needed */
+  z-index: 10; /* Ensure the form is above the background */
 }
 
 .contact-form label {
@@ -147,18 +163,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 .contact-form button:hover {
   background: #2b6cb0;
-}
-/* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
-.about-bg {
-  background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
-  min-height: 100vh;
-  margin-bottom: auto;
-}
-/* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
-.services-bg {
-  background: url("cutomHayBailer.jpg") no-repeat center 1% / cover;
-  min-height: 100vh;
-  margin-bottom: auto;
 }
 
 /* ----------  FOOTER  ---------- */
