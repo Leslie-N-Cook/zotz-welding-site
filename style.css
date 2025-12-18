@@ -99,7 +99,55 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg .header,
 .sercives-bg main { position: relative; z-index: 1; }
 
+/* ----------  CONTACT PAGE LAYOUT  ---------- */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
 
+.contact-image {
+  width: 40%; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 2rem;
+}
+
+.contact-form {
+  width: 50%; /* Adjust the width as needed */
+  margin: 0;
+  padding: 0;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #2b6cb0;
+}
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
