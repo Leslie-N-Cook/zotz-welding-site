@@ -23,12 +23,12 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3rem 0;               /* tight bar */
-  gap: 1rem;                       /* logo ↔ nav distance */
+  padding: 0;               /* tight bar */
+  gap: .1rem;                       /* logo ↔ nav distance */
 }
 .logo { font-size: 0; }            /* remove text size bump */
 .logo img {
-  height: 50px;                    /* logo size */
+  height: 120px;                    /* logo size */
   width: auto;
   display: block;
 }
@@ -48,7 +48,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 /* ----------  HERO  ---------- */
 .hero {
   position: relative;
-  background: url("img/truck-rig.jpg") center/cover no-repeat;
+  background: url("truck-rig.jpg") center/cover no-repeat;
   color: var(--white);
   text-align: center;
   padding: 6rem 1rem;
@@ -87,7 +87,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
 /* ----------  ABOUT-PAGE BACKGROUND  ---------- */
-.about-bg { background: url("img/gates-field-powerline.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
+.about-bg { background: url("gates-field-powerline.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .about-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
 .about-bg .header,
 .about-bg main { position: relative; z-index: 1; }
