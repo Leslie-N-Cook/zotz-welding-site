@@ -38,8 +38,8 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   gap: 1rem;                       /* space between links */
 }
 .nav-list a {
-  font-weight: 800;
-  font-size: 2.0rem;               /* BIGGER nav text */
+  font-weight: 600;
+  font-size: 1.8rem;               /* BIGGER nav text */
   color: var(--gunmetal);
   transition: color 0.2s;
 }
@@ -65,7 +65,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   display: inline-block;
   background: var(--blue);
   color: var(--white);
-  padding: 0.25rem .5rem;
+  /*padding: 0.25rem .05rem*/
   border-radius: 4px;
   font-weight: 600;
 }
