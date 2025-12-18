@@ -100,5 +100,5 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
-  background: url("gates-field-powerline.jpg") no-repeat center 11% / cover;
+  background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
 }
