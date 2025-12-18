@@ -116,7 +116,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
 .contact-container {
-  background: url("img/contact-image.jpg") no-repeat center center/cover;
+  background: url("red-repair.jpg") no-repeat center center/cover;
   padding: 2rem;
   display: flex;
   justify-content: center;
