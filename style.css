@@ -24,7 +24,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   justify-content: space-between;
   align-items: center;
   padding: 0;               /* tight bar */
-  gap: .1rem;                       /* logo ↔ nav distance */
+  gap: .01rem;                       /* logo ↔ nav distance */
 }
 .logo { font-size: 0; }            /* remove text size bump */
 .logo img {
@@ -65,7 +65,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   display: inline-block;
   background: var(--blue);
   color: var(--white);
-  padding: 0.75rem 1.5rem;
+  padding: 0.25rem .5rem;
   border-radius: 4px;
   font-weight: 600;
 }
