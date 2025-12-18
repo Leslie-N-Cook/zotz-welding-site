@@ -86,3 +86,14 @@ body { font-size: 20px; }
 }
 .about-bg .header,
 .about-bg main{position:relative;z-index:1;}
+
+/* 1. bigger nav text */
+.nav-list a {
+  font-size: 1.25rem;      /* ~20 px (was ~16) */
+}
+
+/* 2. pull links tight to the logo */
+.head-flex {
+  gap: .55rem;             /* space between logo & nav – was default flex gap */
+  padding: .15rem 0;       /* tiny vertical padding keeps bar thin */
+}
