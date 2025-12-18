@@ -74,16 +74,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 .btn:hover { background: #2b6cb0; }
 
-/* ----------  TINY FOOTER  ---------- */
-.footer {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--light);
-  font-size: 0.875rem;
-  color: var(--gunmetal);
-}
+
 /* ----------  CONTENT BLOCKS  ---------- */
 .intro { padding: 3rem 1rem; text-align: center; max-width: 720px; margin: auto; }
 .content { padding: 3rem 1rem; }
@@ -111,4 +102,15 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
+}
+
+/* ----------  TINY FOOTER  ---------- */
+.footer {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--light);
+  font-size: 0.875rem;
+  color: var(--gunmetal);
 }
