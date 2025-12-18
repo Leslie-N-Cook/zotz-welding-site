@@ -105,6 +105,12 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   min-height: 100vh;
   margin-bottom: auto;
 }
+/* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
+.services-bg {
+  background: url("cutomHayBailer.jpg") no-repeat center 1% / cover;
+  min-height: 100vh;
+  margin-bottom: auto;
+}
 
 /* ----------  FOOTER  ---------- */
 .footer {
