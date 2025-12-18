@@ -65,3 +65,8 @@ Copy
   position: relative;
   z-index: 1;
 }
+ .logo img {
+  height: 50px;          /* adjust to taste */
+  width: auto;           /* keep aspect ratio */
+  display: block;
+}
