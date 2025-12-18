@@ -82,7 +82,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 
 .social a {
-  font-size: 1.25rem; /* Larger font size */
+  font-size: 1.7rem; /* Larger font size */
   font-weight: bold; /* Bold text */
   color: var(--white); /* Use your primary color */
   text-decoration: none;
