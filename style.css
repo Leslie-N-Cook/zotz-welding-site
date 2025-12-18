@@ -93,12 +93,13 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .about-bg .header,
 .about-bg main { position: relative; z-index: 1; }
 
-/* ----------  MOBILE  ---------- */
-@media (max-width: 600px) {
-  .head-flex { flex-direction: column; align-items: flex-start; }
-  .nav-list { flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
-  .hero h2 { font-size: 1.75rem; }
-}
+/* ----------  SERVICES-PAGE BACKGROUND  ---------- */
+.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
+.services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
+.services-bg .header,
+.sercives-bg main { position: relative; z-index: 1; }
+
+
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
@@ -125,4 +126,11 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   bottom: 0;
   width: 100%;
   z-index: 1000; /* Ensure it's above other content */
+}
+
+/* ----------  MOBILE  ---------- */
+@media (max-width: 600px) {
+  .head-flex { flex-direction: column; align-items: flex-start; }
+  .nav-list { flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
+  .hero h2 { font-size: 1.75rem; }
 }
