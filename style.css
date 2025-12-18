@@ -66,7 +66,7 @@ Copy
   z-index: 1;
 }
  .logo img {
-  height: 3px;          /* adjust to taste */
+  height: .5px;          /* adjust to taste */
   width: auto;           /* keep aspect ratio */
   display: block;
 }
