@@ -17,11 +17,11 @@ h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:.35rem 0;          /* was 1rem – much tighter */
+  padding:.2rem 0;          /* was 1rem – much tighter */
 }
 .logo{margin:0;font-size:0;}      /* remove text size bump */
 .logo img{
-  height:40px;               /* logo size locked */
+  height:30px;               /* logo size locked */
   width:auto;
   display:block;
 }
