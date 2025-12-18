@@ -87,18 +87,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
-/* ----------  ABOUT-PAGE BACKGROUND  ---------- */
-.about-bg { background: url("gates-field-powerline.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
-.about-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
-.about-bg .header,
-.about-bg main { position: relative; z-index: 1; }
-
-/* ----------  SERVICES-PAGE BACKGROUND  ---------- */
-.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
-.services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
-.services-bg .header,
-.sercives-bg main { position: relative; z-index: 1; }
-
 /* ----------  CONTACT PAGE LAYOUT  ---------- */
 .contact-container {
   display: flex;
@@ -107,16 +95,16 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   padding: 2rem;
 }
 
-.contact-image {
-  width: 40%; /* Adjust the width as needed */
-  height: auto;
-  margin-right: 2rem;
-}
-
 .contact-form {
   width: 50%; /* Adjust the width as needed */
   margin: 0;
   padding: 0;
+}
+
+.contact-image {
+  width: 30%; /* Make the image smaller */
+  height: auto;
+  margin-left: 2rem; /* Add some space between the form and the image */
 }
 
 .contact-form label {
@@ -148,6 +136,20 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form button:hover {
   background: #2b6cb0;
 }
+
+/* ----------  ABOUT-PAGE BACKGROUND  ---------- */
+.about-bg { background: url("gates-field-powerline.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
+.about-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
+.about-bg .header,
+.about-bg main { position: relative; z-index: 1; }
+
+/* ----------  SERVICES-PAGE BACKGROUND  ---------- */
+.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
+.services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
+.services-bg .header,
+.sercives-bg main { position: relative; z-index: 1; }
+
+
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
