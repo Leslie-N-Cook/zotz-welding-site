@@ -28,7 +28,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 .logo { font-size: 0; }            /* remove text size bump */
 .logo img {
-  height: 20px;                    /* logo size */
+  height: 50px;                    /* logo size */
   width: auto;
   display: block;
 }
