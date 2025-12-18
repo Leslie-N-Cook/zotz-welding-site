@@ -11,7 +11,7 @@ body{font-family:var(--font);line-height:1.6;color:var(--dark);background:var(--
 a{color:var(--blue);text-decoration:none;}
 h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
 .container{max-width:960px;margin:0 auto;padding:0 1rem;}
-
+body { font-size: 20px; }
 /* ====== HEADER – tight bar ====== */
 .head-flex{
   display:flex;
