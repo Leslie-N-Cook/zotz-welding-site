@@ -100,12 +100,54 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg .header,
 .sercives-bg main { position: relative; z-index: 1; }
 
-/* ----------  SERVICES-PAGE BACKGROUND  ---------- */
-.contact-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
-.contact-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
-.contact-bg .header,
-.contact-bg main { position: relative; z-index: 1; }
+/* ----------  CONTACT PAGE BACKGROUND  ---------- */
+.contact-container {
+  background: url("img/contact-image.jpg") no-repeat center center/cover;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+}
 
+.contact-form {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as needed */
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #2b6cb0;
+}
 /* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
 .about-bg {
   background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
@@ -115,13 +157,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 /* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
 .services-bg {
   background: url("cutomHayBailer.jpg") no-repeat center 1% / cover;
-  min-height: 100vh;
-  margin-bottom: auto;
-}
-
-/* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
-.contact-bg {
-  background: url("red-repair.jpg") no-repeat center 1% / cover;
   min-height: 100vh;
   margin-bottom: auto;
 }
