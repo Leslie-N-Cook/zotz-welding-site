@@ -84,13 +84,14 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .social a {
   font-size: 1.7rem; /* Larger font size */
   font-weight: bold; /* Bold text */
+  text-decoration: underline; /*underline*/
   color: var(--white); /* Use your primary color */
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .social a:hover {
-  color: var(--dark); /* lighter color on hover */
+  color: var(--blue); /* lighter color on hover */
 }
 /* ----------  CONTENT BLOCKS  ---------- */
 .intro { padding: 3rem 1rem; text-align: center; max-width: 720px; margin: auto; }
@@ -111,7 +112,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .about-bg main { position: relative; z-index: 1; }
 
 /* ----------  SERVICES-PAGE BACKGROUND  ---------- */
-.services-bg { background: url("cutomHayBailer.jpg") no-repeat center bottom/cover; min-height: 100vh; color: #fff; position: relative; }
+.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
 .services-bg .header,
 .services-bg main { position: relative; z-index: 1; }
