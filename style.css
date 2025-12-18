@@ -6,17 +6,47 @@
   --dark:#1a202c;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:var(--font);line-height:1.6;color:var(--dark);background:var(--light);}
 a{color:var(--blue);text-decoration:none;}
 h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
 .container{max-width:960px;margin:0 auto;padding:0 1rem;}
-.head-flex{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
-.logo{font-size:1.5rem;font-weight:700;color:var(--gunmetal);}
-.nav-list{display:flex;gap:1.5rem;list-style:none;}
+
+/* ====== HEADER – tight bar ====== */
+.head-flex{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:.35rem 0;          /* was 1rem – much tighter */
+}
+.logo{margin:0;font-size:0;}      /* remove text size bump */
+.logo img{
+  height:40px;               /* logo size locked */
+  width:auto;
+  display:block;
+}
+.nav-list{
+  display:flex;
+  gap:1rem;                  /* tighter nav spacing */
+  list-style:none;
+  margin:0;
+  padding:0;
+}
 .nav-list a{font-weight:600;color:var(--gunmetal);}
-.hero{position:relative;background:url("truck-rig.jpg") center/cover no-repeat;color:var(--white);text-align:center;padding:6rem 1rem;}
-.hero-overlay{position:absolute;inset:0;background:rgba(45,55,72,.65);}
+
+/* ====== HERO – background image ====== */
+.hero{
+  position:relative;
+  background:url("truck-rig.jpg") center/cover no-repeat;
+  color:var(--white);
+  text-align:center;
+  padding:6rem 1rem;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(45,55,72,.65);
+}
 .hero-inner{position:relative;z-index:2;}
 .hero h2{font-size:2.25rem;margin-bottom:.5rem;}
 .tagline{font-size:1.125rem;margin-bottom:1.5rem;}
@@ -39,36 +69,20 @@ h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
   .nav-list{flex-wrap:wrap;gap:1rem;margin-top:.5rem;}
   .hero h2{font-size:1.75rem;}
 }
-/* ---- about page full-screen background ---- */
-.about-bg {
-  background: url("gates-field-powerline.jpg") no-repeat center center/cover;
-  min-height: 100vh;               /* fill viewport */
-  margin: 0;
-  color: #fff;                     /* white text for readability */
-  position: relative;
-}
 
-/* dark overlay so text pops */
-.about-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.55);
-  z-index: -1;
+/* ====== ABOUT-PAGE BACKGROUND ====== */
+.about-bg{
+  background:url("gates-field-powerline.jpg") no-repeat center/cover;
+  min-height:100vh;
+  color:#fff;
+  position:relative;
 }
-
-/* keep header & content above overlay */
+.about-bg::before{          /* dark overlay */
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:-1;
+}
 .about-bg .header,
-.about-bg main {
-  position: relative;
-  z-index: 1;
-}
- .logo img {
-  height: 200px;          /* adjust to taste */
-  width: auto;           /* keep aspect ratio */
-  display: block;
-}
-.head-flex {
-  padding: .2rem 0;
-  align-items: center;   /* already in your file, just make sure it stays */
-}
+.about-bg main{position:relative;z-index:1;}
