@@ -38,8 +38,8 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   gap: 1rem;                       /* space between links */
 }
 .nav-list a {
-  font-weight: 500;
-  font-size: .75rem;               /* BIGGER nav text */
+  font-weight: 6000;
+  font-size: 1.2rem;               /* BIGGER nav text */
   color: var(--gunmetal);
   transition: color 0.2s;
 }
@@ -99,23 +99,14 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg main { position: relative; z-index: 1; }
 
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
-/*.contact-container {
+.contact-container {
   background: url("red-repair.jpg") no-repeat center center/cover;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Full height of the viewport */
-  /*position: relative; /* Ensure the container is positioned */
-/*}*/
-
-.contact-container {
   position: relative; /* Ensure the container is positioned */
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Full height of the viewport */
 }
 
 .contact-container::before {
