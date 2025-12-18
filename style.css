@@ -1,3 +1,5 @@
+
+
 /* ----------  ROOT VARIABLES  ---------- */
 :root {
   --gunmetal: #2d3748;
@@ -74,7 +76,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 .btn:hover { background: #2b6cb0; }
 
-
 /* ----------  CONTENT BLOCKS  ---------- */
 .intro { padding: 3rem 1rem; text-align: center; max-width: 720px; margin: auto; }
 .content { padding: 3rem 1rem; }
@@ -87,7 +88,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
-
 /* ----------  ABOUT-PAGE BACKGROUND  ---------- */
 .about-bg { background: url("gates-field-powerline.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .about-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
@@ -98,24 +98,11 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
 .services-bg .header,
-.sercives-bg main { position: relative; z-index: 1; }
+.services-bg main { position: relative; z-index: 1; }
 
-
-/* ----------  ABOUT-PAGE BACKGROUND – don’t chop top  ---------- */
-.about-bg {
-  background: url("gates-field-powerline.jpg") no-repeat center 1% / cover;
-  min-height: 100vh;
-  margin-bottom: auto;
-}
-/* ----------  SERVICES-PAGE BACKGROUND – don’t chop top  ---------- */
-.services-bg {
-  background: url("cutomHayBailer.jpg") no-repeat center 1% / cover;
-  min-height: 100vh;
-  margin-bottom: auto;
-}
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
 .contact-container {
-  background: url("img/red-repair.jpg") no-repeat center center/cover;
+  background: url("red-repair.jpg") no-repeat center center/cover;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -163,6 +150,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form button:hover {
   background: #2b6cb0;
 }
+
 /* ----------  FOOTER  ---------- */
 .footer {
   display: flex;
@@ -183,4 +171,10 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   .head-flex { flex-direction: column; align-items: flex-start; }
   .nav-list { flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
   .hero h2 { font-size: 1.75rem; }
+  .contact-container {
+    padding: 1rem;
+  }
+  .contact-form {
+    padding: 1rem;
+  }
 }
