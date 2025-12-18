@@ -39,7 +39,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 .nav-list a {
   font-weight: 6000;
-  font-size: 1.2rem;               /* BIGGER nav text */
+  font-size: 1.7rem;               /* BIGGER nav text */
   color: var(--gunmetal);
   transition: color 0.2s;
 }
@@ -86,9 +86,14 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
+/* ----------  ABOUT-PAGE BACKGROUND  ---------- */
+.about-bg { background: url("cutomHayBailer.jpg") no-repeat center bottom/cover; min-height: 100vh; color: #fff; position: relative; }
+.about-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
+.about-bg .header,
+.about-bg main { position: relative; z-index: 1; }
 
 /* ----------  SERVICES-PAGE BACKGROUND  ---------- */
-.services-bg { background: url("cutomHayBailer.jpg") no-repeat centerb bottom/cover; min-height: 100vh; color: #fff; position: relative; }
+.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
 .services-bg .header,
 .services-bg main { position: relative; z-index: 1; }
