@@ -51,7 +51,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   display: flex;
   align-items: center;              /* vertical centre */
   justify-content: center;          /* horizontal centre */
-  background: url("img/truck-rig.jpg") center/cover no-repeat;
+  background: url("truck-rig.jpg") center/cover no-repeat;
   color: var(--white);
   text-align: center;
   position: relative;
