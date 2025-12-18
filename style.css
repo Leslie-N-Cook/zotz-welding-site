@@ -15,7 +15,7 @@ h1,h2,h3{line-height:1.2;margin-bottom:.5em;}
 .logo{font-size:1.5rem;font-weight:700;color:var(--gunmetal);}
 .nav-list{display:flex;gap:1.5rem;list-style:none;}
 .nav-list a{font-weight:600;color:var(--gunmetal);}
-.hero{position:relative;background:url("hero.jpg") center/cover no-repeat;color:var(--white);text-align:center;padding:6rem 1rem;}
+.hero{position:relative;background:url("truck-rig.jpg") center/cover no-repeat;color:var(--white);text-align:center;padding:6rem 1rem;}
 .hero-overlay{position:absolute;inset:0;background:rgba(45,55,72,.65);}
 .hero-inner{position:relative;z-index:2;}
 .hero h2{font-size:2.25rem;margin-bottom:.5rem;}
@@ -66,10 +66,11 @@ Copy
   z-index: 1;
 }
  .logo img {
-  height: 100px;          /* adjust to taste */
+  height: 200px;          /* adjust to taste */
   width: auto;           /* keep aspect ratio */
   display: block;
 }
 .head-flex {
+  padding: .2rem 0;
   align-items: center;   /* already in your file, just make sure it stays */
 }
