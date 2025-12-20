@@ -119,13 +119,13 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
 .contact-container {
-  background: url("red-repair.jpg") no-repeat center/cover;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   min-height: 100vh;
+  background: url("img/red-repair.jpg") no-repeat center/cover;
   color: #fff;
 }
 
@@ -137,6 +137,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   z-index: -1;
 }
 
+/* ----------  CONTACT FORM OVERLAY  ---------- */
 .contact-form {
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
   padding: 2rem;
