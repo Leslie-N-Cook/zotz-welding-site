@@ -120,6 +120,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 /* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
 .contact-container {
   position: relative;
+  padding: 1rem;
   background: url("img/red-repair.jpg") no-repeat center center / cover;
   color: #fff;
   min-height: 100vh;   /* still fills screen */
@@ -134,7 +135,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 /* ----------  CONTACT FORM OVERLAY  ---------- */
 .contact-form {
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent white background */
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
