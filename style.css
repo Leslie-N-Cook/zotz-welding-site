@@ -119,13 +119,22 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 /* ----------  CONTACT PAGE BACKGROUND  ---------- */
 .contact-container {
-  background: url("red-repair.jpg") no-repeat center center/cover;
+  background: url("red-repair.jpg") no-repeat center/cover;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Full height of the viewport */
-  position: relative; /* Ensure the container is positioned */
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.contact-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);   /* dark overlay */
+  z-index: -1;
 }
 
 .contact-form {
@@ -272,23 +281,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
     padding: 1rem;
   }
 }
-/* ----------  LIGHTBOX ---------- */
-.lightbox{
-  position:fixed; inset:0; background:rgba(0,0,0,.85);
-  display:flex; align-items:center; justify-content:center;
-  z-index:9999; opacity:0; pointer-events:none; transition:opacity .3s ease;
-}
-.lightbox.active{ opacity:1; pointer-events:auto; }
-.lightbox-content{ position:relative; max-width:90vw; max-height:90vh; }
-.lightbox-content img{ width:100%; height:100%; object-fit:contain; border-radius:6px; }
-.lightbox-close, .lightbox-prev, .lightbox-next{
-  position:absolute; background:rgba(0,0,0,.6); color:#fff; border:none;
-  font-size:2rem; padding:.25rem .7rem; cursor:pointer; border-radius:4px; line-height:1;
-}
-.lightbox-close{ top:10px; right:10px; }
-.lightbox-prev{ left:10px; top:50%; transform:translateY(-50%); }
-.lightbox-next{ right:10px; top:50%; transform:translateY(-50%); }
-
 /* ----  light-box : force image to viewport  ---- */
 .lightbox-content{
   max-width:90vw;
