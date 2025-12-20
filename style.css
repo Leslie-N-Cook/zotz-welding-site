@@ -119,11 +119,14 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 /* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
 .contact-container {
-  position: relative;
-  padding: 1rem;
-  background: url("img/red-repair.jpg") no-repeat center center / cover;
+  position: relative;                /* needed for ::before */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem; 
+  background: url("img/nightGate.jpg") no-repeat center center / cover;
   color: #fff;
-  min-height: 100vh;   /* still fills screen */
 }
 
 .contact-container::before {
