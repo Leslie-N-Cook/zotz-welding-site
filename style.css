@@ -112,7 +112,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .about-bg main { position: relative; z-index: 1; }
 
 /* ----------  SERVICES-PAGE BACKGROUND  ---------- */
-.services-bg { background: url("cutomHayBailer.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
+.services-bg { background: url("customHaySpike.jpg") no-repeat center/cover; min-height: 100vh; color: #fff; position: relative; }
 .services-bg::before { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.55); z-index: -1; }
 .services-bg .header,
 .services-bg main { position: relative; z-index: 1; }
