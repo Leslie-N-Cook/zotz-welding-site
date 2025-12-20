@@ -50,18 +50,43 @@
     <section class="gallery-grid">
       <!-- 1-up images -->
       
-      <img src="img/cutomHayBailer.jpg" alt="Custom Hay Baler">
-      <p>Custom Hay Baler</p>
-      <img src="img/green-brackets.jpg" alt="New 3 pt Connection Brackets on Spring Tooth Plow">
-      <p>New 3 pt Connection Brackets on Spring Tooth Plow</p>
-      <img src="img/awning.jpg" alt="20’x40’ Awning at J&K Farms">
-      <p>20’x40’ Awning at J&K Farms</p>
-      <img src="img/cows-fence.jpg" alt="600 ft long Barbed Wire Fence">
-      <p>600 ft long Barbed Wire Fence</p>
-      <img src="img/big-gate.jpg" alt="Double 18 Footers">
-      <p>Double 18 Footers</p>
-      <img src="img/nightGate.jpg" alt="Straight Gate Update">
-      <p>No more sag on this gate</p>
+      <section class="gallery-grid">
+        <!--  item 1  -->
+        <figure class="gallery-item">
+          <img src="img/cutomHayBailer.jpg" alt="Custom Hay Baler">
+          <figcaption>Custom Hay Baler</figcaption>
+        </figure>
+      
+        <!--  item 2  -->
+        <figure class="gallery-item">
+          <img src="img/green-brackets.jpg" alt="New 3-pt Brackets">
+          <figcaption>New 3-pt Connection Brackets on Spring Tooth Plow</figcaption>
+        </figure>
+      
+        <!--  item 3  -->
+        <figure class="gallery-item">
+          <img src="img/awning.jpg" alt="20’×40’ Awning">
+          <figcaption>20’×40’ Awning at J&K Farms</figcaption>
+        </figure>
+      
+        <!--  item 4  -->
+        <figure class="gallery-item">
+          <img src="img/cows-fence.jpg" alt="600-ft Barbed Wire">
+          <figcaption>600 ft long Barbed Wire Fence</figcaption>
+        </figure>
+      
+        <!--  item 5  -->
+        <figure class="gallery-item">
+          <img src="img/big-gate.jpg" alt="Double 18-footers">
+          <figcaption>Double 18 Footers</figcaption>
+        </figure>
+      
+        <!--  item 6  -->
+        <figure class="gallery-item">
+          <img src="img/nightGate.jpg" alt="Straight Gate Update">
+          <figcaption>No more sag on this gate</figcaption>
+        </figure>
+      </section>
 
       <!-- optional video -->
       
@@ -83,5 +108,61 @@
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
+
+  <!-- =====  LIGHT-BOX  ===== -->
+  <script>
+    const items = document.querySelectorAll('.gallery-item');
+    const total = items.length;
+    let current = 0;
+
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.innerHTML = `
+      <div class="lightbox-content">
+        <img src="" alt="">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">&#8249;</button>
+        <button class="lightbox-next">&#8250;</button>
+      </div>`;
+    document.body.appendChild(box);
+
+    const img = box.querySelector('img');
+    const closeBtn = box.querySelector('.lightbox-close');
+    const prevBtn = box.querySelector('.lightbox-prev');
+    const nextBtn = box.querySelector('.lightbox-next');
+
+    items.forEach((item, idx) => {
+      item.addEventListener('click', () => {
+        current = idx;
+        showCurrent();
+        box.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => box.classList.remove('active'));
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + total) % total;
+      showCurrent();
+    });
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % total;
+      showCurrent();
+    });
+
+    document.addEventListener('keydown', e => {
+      if (!box.classList.contains('active')) return;
+      if (e.key === 'ArrowLeft') prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Escape') closeBtn.click();
+    });
+
+    function showCurrent() {
+      const src = items[current].querySelector('img').src;
+      const alt = items[current].querySelector('img').alt;
+      img.src = src;
+      img.alt = alt;
+    }
+  </script>
+
 </body>
 </html>
