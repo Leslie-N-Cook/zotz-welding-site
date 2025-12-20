@@ -117,7 +117,25 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg .header,
 .services-bg main { position: relative; z-index: 1; }
 
+/* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
+.contact-container {
+  background: url("img/red-repair.jpg") no-repeat center center / cover;
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
 
+.contact-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);   /* same darkness as other pages */
+  z-index: -1;
+}
 /* ----------  CONTACT FORM OVERLAY  ---------- */
 .contact-form {
   background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
@@ -163,22 +181,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   gap:1.5rem;
   padding:2rem 1rem;
-}
-
-/* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
-.contact-container {
-  position: relative;
-  min-height: 100vh;
-  background: url("img/red-repair.jpg") no-repeat center center / cover;
-  color: #fff;
-}
-
-.contact-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);   /* same darkness as other pages */
-  z-index: -1;
 }
 
 .gallery-item{
