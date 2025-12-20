@@ -295,3 +295,17 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   object-fit:contain;    /* letter-box if aspect differs */
   border-radius:6px;
 }
+
+/* ----------  DESKTOP GALLERY ALIGNMENT  ---------- */
+.gallery-grid {
+  grid-auto-rows: 1fr;          /* force equal row height */
+}
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;                /* fill the row track */
+}
+.gallery-item img {
+  flex: 1 1 auto;              /* absorb extra space */
+  object-fit: cover;           /* crop evenly */
+}
