@@ -288,3 +288,20 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .lightbox-close{ top:10px; right:10px; }
 .lightbox-prev{ left:10px; top:50%; transform:translateY(-50%); }
 .lightbox-next{ right:10px; top:50%; transform:translateY(-50%); }
+
+/* ----  light-box : force image to viewport  ---- */
+.lightbox-content{
+  max-width:90vw;
+  max-height:90vh;
+  display:flex;          /* centre the img both ways */
+  align-items:center;
+  justify-content:center;
+}
+.lightbox-content img{
+  max-width:100%;
+  max-height:90vh;       /* never taller than viewport */
+  width:auto;
+  height:auto;
+  object-fit:contain;    /* letter-box if aspect differs */
+  border-radius:6px;
+}
