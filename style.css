@@ -164,15 +164,12 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   gap:1.5rem;
   padding:2rem 1rem;
 }
-/* ----------  CONTACT PAGE BACKGROUND  ---------- */
+
+/* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
 .contact-container {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
   min-height: 100vh;
-  background: url("img/red-repair.jpg") no-repeat center/cover;
+  background: url("img/red-repair.jpg") no-repeat center center / cover;
   color: #fff;
 }
 
@@ -180,7 +177,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);   /* dark overlay */
+  background: rgba(0, 0, 0, 0.55);   /* same darkness as other pages */
   z-index: -1;
 }
 
