@@ -138,7 +138,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 /* ----------  CONTACT FORM OVERLAY  ---------- */
 .contact-form {
-  background: rgba(0, 0, 0, 0.8); /* Semi-transparent white background */
+  background: rgba(248, 248, 248, 0.8); /* Semi-transparent white background */
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
