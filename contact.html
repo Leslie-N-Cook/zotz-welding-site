@@ -8,6 +8,51 @@
   <title>Contact – Zotz Welding LLC</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
+<script>
+  /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
+  const reviewForm   = document.getElementById('review-form');
+  const reviewList   = document.getElementById('review-list');
+  const googleLink   = document.getElementById('google-link');
+  const gLinkAnchor  = document.getElementById('g-link');
+  
+  // load existing reviews from localStorage
+  window.addEventListener('DOMContentLoaded', () => {
+    const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+    stored.forEach(r => appendReview(r));
+  });
+  
+  reviewForm.addEventListener('submit', e => {
+    e.preventDefault(); // let Formspree handle the POST
+    const data = Object.fromEntries(new FormData(reviewForm));
+    appendReview(data);
+    saveReview(data);
+    createGoogleLink(data);
+    reviewForm.reset();
+    googleLink.style.display = 'block';
+  });
+  
+  function appendReview({name, rating, review}) {
+    const div = document.createElement('div');
+    div.className = 'review-card';
+    div.innerHTML = `
+      <strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br>
+      <p>${review}</p>
+    `;
+    reviewList.appendChild(div);
+  }
+  
+  function saveReview(data) {
+    const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+    reviews.push(data);
+    localStorage.setItem('zotzReviews', JSON.stringify(reviews));
+  }
+  
+  function createGoogleLink({rating, review}) {
+    const text = encodeURIComponent(`(${rating}/5) ${review}`);
+    gLinkAnchor.href = `https://search.google.com/local/writereview?placeid=ChIJNeQLi9xAToYRSjK8n9zQJyQ&review=${text}`;
+  }
+  </script>
 <body>
   <!-- ====  HEADER (same as other pages)  ==== -->
   <header class="header">
@@ -44,6 +89,37 @@
   </div>
   </main>
 
+  <section id="review-section" style="margin-top:3rem;">
+    <h3>Leave a Review</h3>
+    <form id="review-form" action="https://formspree.io/f/mqekvojq" method="POST">
+      <label>Name <input type="text" name="name" required></label>
+      <label>Rating
+        <select name="rating" required>
+          <option value="5">5 ⭐</option>
+          <option value="4">4 ⭐</option>
+          <option value="3">3 ⭐</option>
+          <option value="2">2 ⭐</option>
+          <option value="1">1 ⭐</option>
+        </select>
+      </label>
+      <label>Review<textarea name="review" rows="4" required></textarea></label>
+      <button type="submit" class="btn">Submit Review</button>
+    </form>
+  
+    <!-- one-click Google link (generated after submit) -->
+    <div id="google-link" style="display:none;margin-top:1rem;">
+      <p>Thanks!  Click below to paste this review on Google:</p>
+      <a id="g-link" class="btn" href="#" target="_blank" rel="noopener">Post on Google</a>
+    </div>
+  </section>
+  
+  <!-- where reviews appear instantly -->
+  <section id="on-site-reviews" style="margin-top:3rem;">
+    <h3>Customer Reviews</h3>
+    <div id="review-list"></div>
+  </section>
+
+
   <footer class="footer">
     <div class="container">
       <p>&copy; <span id="yr"></span> Zotz Welding LLC</p>
@@ -54,3 +130,5 @@
   </script>
 </body>
 </html>
+
+
