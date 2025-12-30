@@ -118,8 +118,9 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg main { position: relative; z-index: 1; }
 
 /* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
+/*---
 .contact-container {
-  position: relative;                /* needed for ::before */
+  position: relative;                
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,17 +137,20 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   background: rgba(0, 0, 0, 0.55);
   z-index: -1;
 }
+---*/  
 /* ----------  CONTACT FORM OVERLAY  ---------- */
+
+/*---
 .contact-form {
   background: rgba(248, 248, 248, 0.8); /* Semi-transparent white background */
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px; /* Adjust the max-width as needed */
-  z-index: 10; /* Ensure the form is above the background */
-}
-
+  /*padding: 2rem;
+  /*border-radius: 8px;
+  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /*width: 100%;
+  /*max-width: 400px; /* Adjust the max-width as needed */
+  /*z-index: 10; /* Ensure the form is above the background */
+/*} */
+/*---
 .contact-form label {
   display: block;
   margin-bottom: 1rem;
@@ -186,9 +190,48 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   margin-bottom:1rem;
   border-radius:4px;
 }
+---*/
+/* ----------  CONTACT / REVIEW SHARED OVERLAY  ---------- */
+.contact-wrapper{
+  position:relative;
+  min-height:100vh;
+  background:url("img/cows-fence.jpg") no-repeat center center/cover;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+.contact-wrapper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
+}
 
+/* ---- smaller contact card ---- */
+.contact-form{
+  background:rgba(255,255,255,.85);
+  padding:1.5rem 2rem;
+  border-radius:8px;
+  width:100%;
+  max-width:380px;          /* shrink width */
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
 
+/* ---- review card over same photo ---- */
+#review-section{
+  margin-top:2rem;           /* space below form */
+  background:rgba(255,255,255,.85);
+  padding:1.5rem 2rem;
+  border-radius:8px;
+  width:100%;
+  max-width:380px;           /* same width as form */
+  box-shadow:0 4px 12px rgba(0,0,0,.25);
+}
 
+/*------- GALLERY SECTION -------*/
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
