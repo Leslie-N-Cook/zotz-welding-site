@@ -76,10 +76,6 @@
         </div>
       </section>
 
-      <!--<section id="on-site-reviews" style="margin-top:3rem;">
-        <h3>Customer Reviews</h3>
-        <div id="review-list"></div>
-      </section>-->
     </div>
   </main>
 
@@ -89,7 +85,7 @@
     </div>
   </footer>
 
-  <!--  scripts AFTER footer  -->
+  <!--  scripts INSIDE body  -->
   <script>
     document.getElementById('yr').textContent = new Date().getFullYear();
   </script>
@@ -129,7 +125,7 @@
     }
     function createGoogleLink({rating, review}) {
       const text = encodeURIComponent(`(${rating}/5) ${review}`);
-      gLinkAnchor.href = `https://search.google.com/local/writereview?placeid=ChIJNeQLi9xAToYRSjK8n9zQJyQ&review=${text}`;
+      gLinkAnchor.href = `https://g.page/r/CeqBglxvlMfFEBM/review=${text}`;
     }
   </script>
 </body>
