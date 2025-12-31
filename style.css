@@ -165,9 +165,9 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 /*  BIG BOLD DROPDOWN  */
 #rating-select {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  padding: .5rem 1rem;
+  padding: .4rem 1rem;
   width: 100%;
   max-width: 150px;
   border: 2px solid var(--blue);
@@ -316,9 +316,9 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 
 /*  BIG RATING DROPDOWN  */
 select[name="rating"] {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  padding: .5rem 1rem;
+  padding: .3rem 1rem;
   width: 100%;
   max-width: 150px;
   border: 2px solid var(--blue);
