@@ -45,8 +45,8 @@
       <section id="review-section" style="margin-top:3rem;">
         <h3>Leave a Review</h3>
         <form id="review-form" action="https://formspree.io/f/mqekvojq" method="POST">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Rating
+          <label><strong>Name </strong><input type="text" name="name" required></label>
+          <label><strong>Rating </strong>
             <select name="rating" required>
               <option value="5">5 ⭐</option>
               <option value="4">4 ⭐</option>
@@ -55,7 +55,8 @@
               <option value="1">1 ⭐</option>
             </select>
           </label>
-          <label>Review<textarea name="review" rows="4" required></textarea></label>
+          <br>
+          <label><strong>Review </strong><textarea name="review" rows="4" ></textarea></label>
           <button type="submit" class="btn">Submit Review</button>
         </form>
         <div id="google-link" style="display:none;margin-top:1rem;">
