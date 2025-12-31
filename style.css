@@ -195,6 +195,19 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   border-radius:4px;
 }
 ---*/
+/* =====  CLICKABLE STAR RATING  ===== */
+.star-rating{
+  display:flex;
+  gap:.25rem;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+.star-rating input{ display:none; }               /* hide radio buttons */
+.star-rating label{ color:#ccc; transition:color .2s; }
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label{ color:#ffc107; }  /* gold */
+
 /* ----------  CONTACT / REVIEW SHARED OVERLAY  ---------- */
 .contact-wrapper{
   position:relative;
