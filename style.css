@@ -121,92 +121,6 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .services-bg .header,
 .services-bg main { position: relative; z-index: 1; }
 
-/* ----------  CONTACT PAGE DARK OVERLAY  ---------- */
-/*---
-.contact-container {
-  position: relative;                
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 2rem; 
-  background: url("img/cows-fence.jpg") no-repeat center/cover;
-  color: #fff;
-}
-
-.contact-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: -1;
-}
----*/  
-/* ----------  CONTACT FORM OVERLAY  ---------- */
-
-/*---
-.contact-form {
-  background: rgba(248, 248, 248, 0.8); /* Semi-transparent white background */
-  /*padding: 2rem;
-  /*border-radius: 8px;
-  /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /*width: 100%;
-  /*max-width: 400px; /* Adjust the max-width as needed */
-  /*z-index: 10; /* Ensure the form is above the background */
-/*} */
-/*---
-.contact-form label {
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.contact-form button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  background: var(--blue);
-  color: var(--white);
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.contact-form button:hover {
-  background: #2b6cb0;
-}
-
-
-
-.review-card{
-  background:var(--light);
-  border-left:4px solid var(--blue);
-  padding:1rem;
-  margin-bottom:1rem;
-  border-radius:4px;
-}
----*/
-/* =====  CLICKABLE STAR RATING  ===== */
-.star-rating{
-  display:flex;
-  gap:.25rem;
-  font-size:1.8rem;
-  cursor:pointer;
-}
-.star-rating input{ display:none; }               /* hide radio buttons */
-.star-rating label{ color:#ccc; transition:color .2s; }
-.star-rating label:hover,
-.star-rating label:hover ~ label,
-.star-rating input:checked ~ label{ color:#ffc107; }  /* gold */
 
 /* ----------  CONTACT / REVIEW SHARED OVERLAY  ---------- */
 .contact-wrapper{
@@ -248,6 +162,23 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   max-width:380px;           /* same width as form */
   box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
+/* =====  CLICKABLE STAR RATING  ===== */
+.star-rating{
+  display:flex;
+  gap:.25rem;
+  font-size:2rem;
+  cursor:pointer;
+}
+.star-rating input{ display:none; }               /* hide radio buttons */
+.star-rating label{
+  color:#ccc;
+  transition:color .2s;
+  padding:0 .2rem;                /* bigger hit area */
+}
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label{ color:#ffc107; }  /* gold */
+
 
 /*------- GALLERY SECTION -------*/
 .gallery-grid{
