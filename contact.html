@@ -145,7 +145,26 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     const data = Object.fromEntries(new FormData(reviewForm));
     appendReview(data);
     saveReview(data);
-
+    createGoogleLink(data);
+    reviewForm.reset();
+    googleLink.style.display = 'block';
+  
+    reviewForm.addEventListener('submit', e => {
+      e.preventDefault();
+    
+      // ---- force rating choice ----
+      if (!reviewForm.rating.value) {
+        alert('Please choose a rating');
+        return;
+      }
+    
+      const data = Object.fromEntries(new FormData(reviewForm));
+      appendReview(data);
+      saveReview(data);
+      createGoogleLink(data);
+      reviewForm.reset();
+      googleLink.style.display = 'block';
+    });
     // build Google link and open it
     const text = encodeURIComponent(`${data.rating}/5 stars\n${data.review}`);
     const googleUrl = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
