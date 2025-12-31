@@ -122,42 +122,25 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
   <script>
     /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
-  /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
-  const reviewForm   = document.getElementById('review-form');
-  const reviewList   = document.getElementById('review-list');
-  const googleLink   = document.getElementById('google-link');
-  const gLinkAnchor  = document.getElementById('g-link');
+    const reviewForm   = document.getElementById('review-form');
+    const reviewList   = document.getElementById('review-list');
+    const googleLink   = document.getElementById('google-link');
+    const gLinkAnchor  = document.getElementById('g-link');
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-    stored.forEach(r => appendReview(r));
-  });
+    window.addEventListener('DOMContentLoaded', () => {
+      const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+      stored.forEach(r => appendReview(r));
+    });
 
-  reviewForm.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // ---- validation ----
-    if (!reviewForm.rating.value) {
-      alert('Please choose a rating');
-      return;
-    }
-
-    const data = Object.fromEntries(new FormData(reviewForm));
-    appendReview(data);
-    saveReview(data);
-    createGoogleLink(data);
-    reviewForm.reset();
-    googleLink.style.display = 'block';
-  
     reviewForm.addEventListener('submit', e => {
       e.preventDefault();
-    
-      // ---- force rating choice ----
+
+      // ---- validation ----
       if (!reviewForm.rating.value) {
         alert('Please choose a rating');
         return;
       }
-    
+
       const data = Object.fromEntries(new FormData(reviewForm));
       appendReview(data);
       saveReview(data);
@@ -165,30 +148,22 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       reviewForm.reset();
       googleLink.style.display = 'block';
     });
-    // build Google link and open it
-    const text = encodeURIComponent(`${data.rating}/5 stars\n${data.review}`);
-    const googleUrl = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
-    gLinkAnchor.href = googleUrl;
 
-    reviewForm.reset();
-    googleLink.style.display = 'block';
-
-    // optional: open Google review tab immediately
-    // window.open(googleUrl, '_blank');
-  });
-
-  function appendReview({name, rating, review}) {
-    const div = document.createElement('div');
-    div.className = 'review-card';
-    div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
-    reviewList.appendChild(div);
-  }
-  function saveReview(data) {
-    const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-    reviews.push(data);
-    localStorage.setItem('zotzReviews', JSON.stringify(reviews));
-  }
+    function appendReview({name, rating, review}) {
+      const div = document.createElement('div');
+      div.className = 'review-card';
+      div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
+      reviewList.appendChild(div);
+    }
+    function saveReview(data) {
+      const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+      reviews.push(data);
+      localStorage.setItem('zotzReviews', JSON.stringify(reviews));
+    }
+    function createGoogleLink({rating, review}) {
+      const text = encodeURIComponent(`${rating}/5 stars\n${data.review}`);
+      gLinkAnchor.href = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
+    }
   </script>
 </body>
 </html>
-
