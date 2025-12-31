@@ -75,16 +75,15 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
         <form id="review-form" action="https://formspree.io/f/mqekvojq" method="POST">
           <label><strong>Name </strong><input type="text" name="name" required></label>
           <label><strong>Rating </strong>
-            <label><strong>Rating </strong>
-              <select id="rating-select" name="rating" required>
-                <option value="" disabled selected>Choose…</option>
-                <option value="5">5 ⭐</option>
-                <option value="4">4 ⭐</option>
-                <option value="3">3 ⭐</option>
-                <option value="2">2 ⭐</option>
-                <option value="1">1 ⭐</option>
-              </select>
-            </label>
+            <select id="rating-select" name="rating" required>
+              <option value="5">5 ⭐</option>
+              <option value="4">4 ⭐</option>
+              <option value="3">3 ⭐</option>
+              <option value="2">2 ⭐</option>
+              <option value="1">1 ⭐</option>
+            </select>
+          </label>
+          <br>
             <!-- <div class="star-rating">
               <input type="radio" name="rating" id="star1" value="1">
               <label for="star1" title="1 star">⭐</label>

@@ -314,15 +314,16 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 
 
-/* =====  CLICKABLE STAR RATING  ===== */
-.star-rating{
-  display:flex;
-  gap:.25rem;
-  font-size:1.8rem;
-  cursor:pointer;
+/*  BIG RATING DROPDOWN  */
+select[name="rating"] {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: .6rem 1rem;
+  width: 100%;
+  max-width: 200px;
+  border: 2px solid var(--blue);
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--gunmetal);
+  cursor: pointer;
 }
-.star-rating input{ display:none; }               /* hide radio buttons */
-.star-rating label{ color:#ccc; transition:color .2s; }
-.star-rating label:hover,
-.star-rating label:hover ~ label,
-.star-rating input:checked ~ label{ color:#ffc107; }  /* gold */
