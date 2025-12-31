@@ -171,9 +171,9 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 }
 .star-rating input{ display:none; }               /* hide radio buttons */
 .star-rating label{
-  color:#ccc;
+  color:#dddcd9;
   transition:color .2s;
-  padding:0 .2rem;                /* bigger hit area */
+  padding:0 .5rem;                /* bigger hit area */
 }
 .star-rating label:hover,
 .star-rating label:hover ~ label,
