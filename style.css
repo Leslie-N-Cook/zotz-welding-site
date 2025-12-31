@@ -162,22 +162,12 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   max-width:380px;           /* same width as form */
   box-shadow:0 4px 12px rgba(0,0,0,.25);
 }
-/* =====  CLICKABLE STAR RATING  ===== */
-.star-rating{
-  display:flex;
-  gap:.25rem;
-  font-size:2rem;
-  cursor:pointer;
-}
-.star-rating input{ display:none; }               /* hide radio buttons */
-.star-rating label{
-  color:#dddcd9;
-  transition:color .2s;
-  padding:0 .5rem;                /* bigger hit area */
-}
+.star-rating{ display:flex; gap:.25rem; font-size:2rem; cursor:pointer; }
+.star-rating input{ display:none; }
+.star-rating label{ color:#b4b3af; transition:color .2s; padding:0 .2rem; }
 .star-rating label:hover,
 .star-rating label:hover ~ label,
-.star-rating input:checked ~ label{ color:#ffc107; }  /* gold */
+.star-rating input:checked ~ label{ color:#ffc107; }
 
 
 /*------- GALLERY SECTION -------*/
