@@ -103,10 +103,10 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .contact-form label { display: grid; font-weight: 600; color: var(--blue); }
 .contact-form input,
 .contact-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
-.review-section { display: grid; gap: 1rem; max-width: 480px; margin-top: 2rem; }
-.review-section { display: grid; font-weight: 600; color: var(--blue); }
-.review-section input,
-.review-section textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
+#review-section { display: grid; gap: 1rem; max-width: 480px; margin-top: 2rem; }
+#review-section { display: grid; font-weight: 600; color: var(--blue); }
+#review-section input,
+#review-section textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
 /* ----------  ABOUT-PAGE BACKGROUND  ---------- */
@@ -204,7 +204,8 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:2rem;
+  gap: 2.5rem;
+  padding:2rem 3rem;
 }
 .contact-wrapper::before{
   content:"";
@@ -217,7 +218,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 /* ---- smaller contact card ---- */
 .contact-form{
   background:rgba(255,255,255,.85);
-  padding:1.5rem 2rem;
+  padding: 2rem 2.5rem;
   border-radius:8px;
   width:100%;
   max-width:380px;          /* shrink width */
@@ -228,7 +229,7 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 #review-section{
   margin-top:2rem;           /* space below form */
   background:rgba(255,255,255,.85);
-  padding:1.5rem 2rem;
+  padding: 2rem 2.5rem;
   border-radius:8px;
   width:100%;
   max-width:380px;           /* same width as form */
