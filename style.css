@@ -100,9 +100,13 @@ header { background: var(--white); border-bottom: 1px solid #e2e8f0; }
 .service-list li { position: relative; padding-left: 1.25rem; margin-bottom: 0.75rem; }
 .service-list li::before { content: "▸"; position: absolute; left: 0; color: var(--blue); }
 .contact-form { display: grid; gap: 1rem; max-width: 480px; margin-top: 2rem; }
-.contact-form label { display: grid; font-weight: 600; color: var(--white); }
+.contact-form label { display: grid; font-weight: 600; color: var(--blue); }
 .contact-form input,
 .contact-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
+.review-section { display: grid; gap: 1rem; max-width: 480px; margin-top: 2rem; }
+.review-section { display: grid; font-weight: 600; color: var(--blue); }
+.review-section input,
+.review-section textarea { width: 100%; padding: 0.5rem; border: 1px solid #cbd5e0; border-radius: 4px; font: inherit; }
 .footer { text-align: center; padding: 2rem 1rem; font-size: 0.875rem; color: var(--gunmetal); }
 
 /* ----------  ABOUT-PAGE BACKGROUND  ---------- */
