@@ -76,20 +76,24 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <label><strong>Name </strong><input type="text" name="name" required></label>
           <label><strong>Rating </strong><br>
             <div class="star-rating">
-              <input type="radio" name="rating" id="star5" value="5" checked required>
-              <label for="star5" title="5 stars">⭐</label>
-          
-              <input type="radio" name="rating" id="star4" value="4">
-              <label for="star4" title="4 stars">⭐</label>
-          
-              <input type="radio" name="rating" id="star3" value="3">
-              <label for="star3" title="3 stars">⭐</label>
-          
-              <input type="radio" name="rating" id="star2" value="2">
-              <label for="star2" title="2 stars">⭐</label>
-          
-              <input type="radio" name="rating" id="star1" value="1">
-              <label for="star1" title="1 star">⭐</label>
+              <label><strong>Rating </strong>
+                <div class="star-rating">
+                  <input type="radio" name="rating" id="star1" value="1">
+                  <label for="star1" title="1 star">⭐</label>
+              
+                  <input type="radio" name="rating" id="star2" value="2">
+                  <label for="star2" title="2 stars">⭐</label>
+              
+                  <input type="radio" name="rating" id="star3" value="3">
+                  <label for="star3" title="3 stars">⭐</label>
+              
+                  <input type="radio" name="rating" id="star4" value="4">
+                  <label for="star4" title="4 stars">⭐</label>
+              
+                  <input type="radio" name="rating" id="star5" value="5" checked required>
+                  <label for="star5" title="5 stars">⭐</label>
+                </div>
+              </label>
             </div>
           </label>
           </label>
@@ -119,41 +123,53 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
   <script>
     /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
-    const reviewForm   = document.getElementById('review-form');
-    const reviewList   = document.getElementById('review-list');
-    const googleLink   = document.getElementById('google-link');
-    const gLinkAnchor  = document.getElementById('g-link');
+  /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
+  const reviewForm   = document.getElementById('review-form');
+  const reviewList   = document.getElementById('review-list');
+  const googleLink   = document.getElementById('google-link');
+  const gLinkAnchor  = document.getElementById('g-link');
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-      stored.forEach(r => appendReview(r));
-    });
+  window.addEventListener('DOMContentLoaded', () => {
+    const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+    stored.forEach(r => appendReview(r));
+  });
 
-    reviewForm.addEventListener('submit', e => {
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(reviewForm));
-      appendReview(data);
-      saveReview(data);
-      createGoogleLink(data);
-      reviewForm.reset();
-      googleLink.style.display = 'block';
-    });
+  reviewForm.addEventListener('submit', e => {
+    e.preventDefault();
 
-    function appendReview({name, rating, review}) {
-      const div = document.createElement('div');
-      div.className = 'review-card';
-      div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
-      reviewList.appendChild(div);
+    // ---- validation ----
+    if (!reviewForm.rating.value) {
+      alert('Please choose a rating');
+      return;
     }
-    function saveReview(data) {
-      const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-      reviews.push(data);
-      localStorage.setItem('zotzReviews', JSON.stringify(reviews));
-    }
-    function createGoogleLink({rating, review}) {
-      const text = encodeURIComponent(`(${rating}/5) ${review}`);
-      gLinkAnchor.href = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
-    }
+
+    const data = Object.fromEntries(new FormData(reviewForm));
+    appendReview(data);
+    saveReview(data);
+
+    // build Google link and open it
+    const text = encodeURIComponent(`${data.rating}/5 stars\n${data.review}`);
+    const googleUrl = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
+    gLinkAnchor.href = googleUrl;
+
+    reviewForm.reset();
+    googleLink.style.display = 'block';
+
+    // optional: open Google review tab immediately
+    // window.open(googleUrl, '_blank');
+  });
+
+  function appendReview({name, rating, review}) {
+    const div = document.createElement('div');
+    div.className = 'review-card';
+    div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
+    reviewList.appendChild(div);
+  }
+  function saveReview(data) {
+    const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+    reviews.push(data);
+    localStorage.setItem('zotzReviews', JSON.stringify(reviews));
+  }
   </script>
 </body>
 </html>
