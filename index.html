@@ -11,21 +11,24 @@
     gtag('config', 'AW-17761815896');
   </script>
   <!-- Event snippet for Contact conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
-      }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17761815896/RffjCPGoqtobENiav5VC',
-        'event_callback': callback
-    });
-    return false;
-  }
-  </script>
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17761815896/w87BCMyQ8dobENiav5VC',
+          'value': 1.0,
+          'currency': 'USD',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
   
   <meta charset="UTF-8">
   <meta name="description" content="Mobile Welding North Texas - gates, fences, equipment repair. Starting at $60/hr, same-day. Call Parker 940-733-3111">
@@ -58,7 +61,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
     <div class="container hero-inner">
       <h2>Mobile Welding Services</h2>
       <p class="tagline"> Starting at $60/hr · Free Estimates · Negotiable Pricing · Satisfaction Guaranteed</p>
-      <a href="tel:9407333111" class="btn">Call 940-733-3111</a>
+      <a href="tel:9407333111" class="btn" onclick="gtag_report_conversion('tel:9407333111')">Call 940-733-3111</a>
       <div class="social">
         <a href="https://www.facebook.com/share/1ZUChgDGmn/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
         <a href="https://www.tiktok.com/@zotzwelding?_r=1&_t=ZP-92HVvUUBHgc" target="_blank" rel="noopener">TikTok</a>

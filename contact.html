@@ -13,20 +13,27 @@
   </script>
   <!-- Event snippet for Contact conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-<script>
-  function gtag_report_conversion(url) {
-    var callback = function () {
-      if (typeof(url) != 'undefined') {
-        window.location = url;
+
+  <!-- Event snippet for Contact conversion page
+    In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17761815896/w87BCMyQ8dobENiav5VC',
+            'value': 1.0,
+            'currency': 'USD',
+            'event_callback': callback
+        });
+        return false;
       }
-    };
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17761815896/RffjCPGoqtobENiav5VC',
-        'event_callback': callback
-    });
-    return false;
-  }
-  </script>
+    </script>
+      
+
   
   <meta charset="UTF-8">
   <meta name="description" content="Mobile Welding North Texas - gates, fences, equipment repair. Starting at $60/hr, same-day. Call Parker 940-733-3111">
@@ -55,7 +62,7 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
   <main class="container content">
     <h2>Call or text any time day or night.</h2>
     <p><strong>Parker Zotz</strong><br>
-    Phone: <a href="tel:9407333111">940-733-3111</a><br>
+    Phone: <a href="tel:9407333111" onclick="gtag_report_conversion('tel:9407333111')">940-733-3111</a><br>
     Email: <a href="mailto:zotzwelding@gmail.com">zotzwelding@gmail.com</a></p>
 
     <!--  both forms share dark background  -->
@@ -73,39 +80,31 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
       <section id="review-section" style="margin-top:3rem;">
         <h3>Leave a Review</h3>
         <form id="review-form" action="https://formspree.io/f/mqekvojq" method="POST">
-          <label><strong>Name </strong><input type="text" name="name" required></label>
-          <label><strong>Rating<br></strong>
-            <select id="rating-select" name="rating" required>
-              <option value="5">5 ⭐</option>
-              <option value="4">4 ⭐</option>
-              <option value="3">3 ⭐</option>
-              <option value="2">2 ⭐</option>
-              <option value="1">1 ⭐</option>
-            </select>
-          </label>
-          <br>
-            <!-- <div class="star-rating">
-              <input type="radio" name="rating" id="star1" value="1">
-              <label for="star1" title="1 star">⭐</label>
-              <input type="radio" name="rating" id="star2" value="2">
-              <label for="star2" title="2 stars">⭐</label>
-              <input type="radio" name="rating" id="star3" value="3">
-              <label for="star3" title="3 stars">⭐</label>
-              <input type="radio" name="rating" id="star4" value="4">
-              <label for="star4" title="4 stars">⭐</label>
-              <input type="radio" name="rating" id="star5" value="5" checked>
-              <label for="star5" title="5 stars">⭐</label>
-            </div> -->
-
-          <label><br><strong>Review </strong><textarea name="review" rows="4" ></textarea></label>
-          <button type="submit" class="btn">Submit Review</button>
+            <label><strong>Name </strong><input type="text" name="name" required></label>
+            <label><strong>Rating<br></strong>
+                <select id="rating-select" name="rating" required>
+                  <option value="5">5 ⭐</option>
+                  <option value="4">4 ⭐</option>
+                  <option value="3">3 ⭐</option>
+                  <option value="2">2 ⭐</option>
+                  <option value="1">1 ⭐</option>
+                </select>
+            </label>
+            <label><br><strong>Review </strong><textarea name="review" rows="4" required></textarea></label>
+            <button type="submit" class="btn">Submit Review</button>
         </form>
+        
+        <!-- Review list section -->
+        <div id="review-list" style="margin-top: 1.5rem;">
+            <!-- User reviews will appear here -->
+        </div>
+    
+        <!-- Google link section -->
         <div id="google-link" style="display:none;margin-top:1rem;">
-          <p>Thanks! Click below to paste this review on Google:</p>
-          <a id="g-link" class="btn" href="#" target="_blank" rel="noopener">Post on Google</a>
+            <p>Thanks! Click below to paste this review on Google:</p>
+            <a id="g-link" class="btn" href="#" target="_blank" rel="noopener">Post on Google</a>
         </div>
       </section>
-
     </div>
   </main>
 
@@ -122,48 +121,68 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
   <script>
     /* =====  INSTANT REVIEW + LOCAL STORAGE  ===== */
-    const reviewForm   = document.getElementById('review-form');
-    const reviewList   = document.getElementById('review-list');
-    const googleLink   = document.getElementById('google-link');
-    const gLinkAnchor  = document.getElementById('g-link');
+  const reviewForm = document.getElementById('review-form');
+  const reviewList = document.getElementById('review-list');
+  const googleLink = document.getElementById('google-link');
+  const gLinkAnchor = document.getElementById('g-link');
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const stored = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-      stored.forEach(r => appendReview(r));
-    });
+reviewForm.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-    reviewForm.addEventListener('submit', e => {
-      e.preventDefault();
-
-      // ---- validation ----
-      if (!reviewForm.rating.value) {
-        alert('Please choose a rating');
+    // ---- Validation ----
+    if (!reviewForm.rating.value || !reviewForm.review.value) {
+        alert('Please choose a rating and write a review.');
         return;
-      }
+    }
 
-      const data = Object.fromEntries(new FormData(reviewForm));
-      appendReview(data);
-      saveReview(data);
-      createGoogleLink(data);
-      reviewForm.reset();
-      googleLink.style.display = 'block';
-    });
+    const formData = new FormData(reviewForm);
+    const reviewData = {
+        name: formData.get('name'),
+        rating: formData.get('rating'),
+        review: formData.get('review')
+    };
 
-    function appendReview({name, rating, review}) {
-      const div = document.createElement('div');
-      div.className = 'review-card';
-      div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
-      reviewList.appendChild(div);
-    }
-    function saveReview(data) {
-      const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
-      reviews.push(data);
-      localStorage.setItem('zotzReviews', JSON.stringify(reviews));
-    }
-    function createGoogleLink({rating, review}) {
-      const text = encodeURIComponent(`${rating}/5 stars\n${data.review}`);
-      gLinkAnchor.href = `https://g.page/r/CeqBglxvlMfFEAI/review?review=${text}`;
-    }
+    // Append the review to the page
+    appendReview(reviewData);
+
+    // Save review to localStorage
+    saveReview(reviewData);
+
+    // Create the Google review link
+    createGoogleLink(reviewData);
+
+    // Show the Google link to the user
+    googleLink.style.display = 'block';
+
+    // Reset form
+    reviewForm.reset();
+});
+
+function appendReview({ name, rating, review }) {
+    const div = document.createElement('div');
+    div.className = 'review-card';
+    div.innerHTML = `<strong>${name}</strong> &nbsp; ${'⭐'.repeat(rating)}<br><p>${review}</p>`;
+    reviewList.appendChild(div);
+}
+
+function saveReview(data) {
+    const reviews = JSON.parse(localStorage.getItem('zotzReviews') || '[]');
+    reviews.push(data);
+    localStorage.setItem('zotzReviews', JSON.stringify(reviews));
+}
+
+function createGoogleLink({ name, rating, review }) {
+    // Encode the review text and rating
+    const reviewText = `${name} rated us ${rating}/5 stars! ${review}`;
+    const encodedReview = encodeURIComponent(reviewText);
+
+    // Update the Google link (change this URL format to your business's Google Review URL)
+    const googlePlaceId = '11172854382128004703'; // Replace with your Google Place ID
+    const googleBusinessUrl = `https://www.google.com/search?q=Zotz+Welding&ludocid=${googlePlaceId}#lrd=0x${googlePlaceId}:0xYOUR_REVIEW_ID`;
+    
+    gLinkAnchor.href = googleBusinessUrl; // Update with the correct Google review URL
+}
+
   </script>
 </body>
 </html>
